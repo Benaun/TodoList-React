@@ -1,4 +1,4 @@
-import TodoList from "../components/todoList"
+import TodoList from "../components/TodoList"
 
 export default function Main() {
     return <><TodoList/></>
