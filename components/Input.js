@@ -2,11 +2,11 @@ import { useState, useCallback, memo, useRef } from 'react'
 import Button from './Button'
 import css from './Input.module.css'
 
-export default memo(function Input({ addClick }) {
+export default memo(function Input({ addTodo }) {
     const
         [value, setValue] = useState(''),
         textRef = useRef(''),
-        onClick = useCallback(() => addClick(textRef.current), [addClick]);
+        onClick = useCallback(() => addTodo(textRef.current), [addTodo]);
 
     textRef.current = value;
 

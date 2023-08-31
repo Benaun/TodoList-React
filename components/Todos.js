@@ -7,7 +7,9 @@ import css from './Todos.module.css'
 export default function Todo() {
     const [todos, setTodos] = useState([]);
 
-    const addClick = useCallback(newTodoText =>  setTodos([...todos, newTodo(newTodoText)]));
+    const addTodo = useCallback((newTodoText) => {
+        setTodos([...todos, newTodo(newTodoText)])
+    });
 
     const deleteTodo = useCallback((id) => {
         const updateTodos = [...todos];
@@ -16,8 +18,8 @@ export default function Todo() {
     });
 
     const checkedTodo = useCallback((id) => {
-        setTodos((prevTodos) =>
-            prevTodos.map((todo) =>
+        setTodos((todos) =>
+            todos.map((todo) =>
                 todo.id === id ? { ...todo, checked: !todo.checked } : todo
             )
         );
@@ -26,7 +28,7 @@ export default function Todo() {
     return (
         <div className={css.container}>
             <h2 className={css.todo__title}>Список дел:</h2>
-            <Input addClick={addClick}/>
+            <Input addTodo={addTodo} />
             <TodoList todos={todos} checkedTodo={checkedTodo} deleteTodo={deleteTodo} />
         </div>
     );
