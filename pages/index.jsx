@@ -1,5 +1,7 @@
-import TodoList from "../components/TodoList"
+import Todos from '../components/Todos'
 
 export default function Main() {
-    return <><TodoList/></>
+    return <>
+        <Todos />
+    </>
 }

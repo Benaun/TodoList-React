@@ -1,0 +1,21 @@
+.todo__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    overflow: hidden;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.todo__item:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.delete__btn {
+    margin-left: 20px;
+    border: none;
+    background-color: #e57373;
+    border-radius: 5px;
+    padding: 2px 5px;
+}
