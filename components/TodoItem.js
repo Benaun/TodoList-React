@@ -1,17 +1,23 @@
-import { memo, useCallback } from "react";
+import { useDispatch } from "react-redux"
 import css from "./TodoItem.module.css"
+import { toggleComplete, deleteTodo } from "../store/todoSlice/TodoSlice";
 
-export default memo(function TodoItem({ todo, checkedTodo, deleteTodo }) {
-    const { id, checked, text } = todo;
-    const onClick = useCallback(() => deleteTodo(id), [deleteTodo, id]);
-    
+export default function TodoItem({ id, text, completed }) {
+    const dispatch = useDispatch();
     return (
         <li className={css.todo__item}>
-            <input type="checkbox" checked={checked} onChange={()=> checkedTodo(id)}/>
+            <input
+                type="checkbox"
+                checked={completed}
+                onChange={() => dispatch(toggleComplete({id}))}
+            />
             {text}
-            <button className={css.delete__btn} onClick={onClick}>
-                X
+            <button
+                className={css.delete__btn}
+                onClick={() => dispatch(deleteTodo({id}))}
+            >
+                &times;
             </button>
         </li>
     )
-});
+};
