@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-import { toggleComplete, deleteTodo } from "../store/todoSlice/todoSlice";
+import { toggleComplete, deleteTodo } from "../store/todoSlice";
 import Button from "./Button";
 
 export default function TodoItem({ id, text, completed }) {
@@ -8,7 +8,7 @@ export default function TodoItem({ id, text, completed }) {
         <li className={!completed
             ? "p-2 bg-white rounded-lg"
             : "p-2 bg-lime-400 rounded-lg"}>
-            <div class="flex align-middle flex-row justify-between">
+            <div className="flex align-middle flex-row justify-between">
                 <div className="p-2">
                     <input
                         className=" h-6 w-6"
@@ -18,7 +18,7 @@ export default function TodoItem({ id, text, completed }) {
                     />
                 </div>
                 <div className="p-2">
-                    <p class="text-lg text-black">
+                    <p className="text-lg text-black">
                         {text}
                     </p>
                 </div>

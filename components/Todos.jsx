@@ -2,7 +2,7 @@ import { useState } from "react";
 import Input from "./Input";
 import TodoList from "./TodoList";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../store/todoSlice/todoSlice";
+import { addTodo } from "../store/todoSlice";
 
 export default function Todo() {
     const [text, setText] = useState('');
