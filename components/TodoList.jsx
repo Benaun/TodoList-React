@@ -3,10 +3,10 @@ import { useSelector } from 'react-redux';
 
 export default function TodoList() {
     const todos = useSelector(state => state.todos.todos);
-    return <>
+    return <div className="mt-8">
         {
             todos.length > 0 ?
-                <ul className="mx-auto w-3/4 list-none">
+                <ul>
                     {todos.map((todo) => (
                         <TodoItem
                             key={todo.id}
@@ -14,8 +14,8 @@ export default function TodoList() {
                         />
                     ))}
                 </ul>
-                : <div className="flex mx-auto pb-8 text-white text-4xl">Список задач пуст</div>
+                : <h2 className=" text-2xl mb-2">Список дел пуст</h2>
         }
-    </>
+    </div>
 
 }

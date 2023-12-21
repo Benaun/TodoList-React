@@ -9,21 +9,26 @@ export default function Todo() {
     const dispatch = useDispatch();
 
     const handleAction = () => {
-        if(text.trim().length) {
-            dispatch(addTodo({text}));
+        if (text.trim().length) {
+            dispatch(addTodo({ text }));
             setText('')
         }
     }
 
     return (
-        <div className="flex flex-wrap items-center justify-between rounded-lg p-2 bg-gray-400 w-3/5 border-solid border-2 border-gray-300">
-            <h2 className="my-0 mx-auto pb-8 text-white text-7xl">Список дел:</h2>
-            <Input
-                value={text}
-                changeText={setText}
-                handleAction={handleAction}
-            />
-            <TodoList />
+        <div className="w-full h-screen bg-gray-200 pt-8">
+            <div className="bg-white p-3 max-w-md mx-auto rounded-md">
+                <div className="text-center">
+                    <h1 className="text-3xl font-bold">Список дел:</h1>
+                    <Input
+                        value={text}
+                        changeText={setText}
+                        handleAction={handleAction}
+                    />
+                    <TodoList />
+                </div>
+            </div>
         </div>
+
     );
 }

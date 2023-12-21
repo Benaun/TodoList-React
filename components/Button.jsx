@@ -1,7 +1,7 @@
-export default function Button({ text, onClick }) {
+export default function Button({ text, onClick, className }) {
     return (
         <button
-            className="p-2 ml-4 bg-white rounded-md"
+            className={className}
             onClick={onClick}
         >
             {text}
