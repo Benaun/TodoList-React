@@ -1,9 +1,8 @@
 import { useState } from "react";
 import Input from "./Input";
 import TodoList from "./TodoList";
-import css from './Todos.module.css'
 import { useDispatch } from "react-redux";
-import { addTodo } from "../store/todoSlice/TodoSlice";
+import { addTodo } from "../store/todoSlice/todoSlice";
 
 export default function Todo() {
     const [text, setText] = useState('');
@@ -17,8 +16,8 @@ export default function Todo() {
     }
 
     return (
-        <div className={css.container}>
-            <h2 className={css.todo__title}>Список дел:</h2>
+        <div className="flex flex-wrap items-center justify-between rounded-lg p-2 bg-gray-400 w-3/5 border-solid border-2 border-gray-300">
+            <h2 className="my-0 mx-auto pb-8 text-white text-7xl">Список дел:</h2>
             <Input
                 value={text}
                 changeText={setText}

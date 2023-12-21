@@ -1,9 +1,7 @@
-import css from './Button.module.css'
-
 export default function Button({ text, onClick }) {
     return (
         <button
-            className={css.todo__add}
+            className="p-2 ml-4 bg-white rounded-md"
             onClick={onClick}
         >
             {text}
